@@ -672,6 +672,20 @@
   "use strict";
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* in-page anchor links scroll to target without touching the URL hash —
+     a hash in the URL makes the browser jump straight there on any reload
+     (refresh button, pull-to-refresh), landing away from the top */
+  document.addEventListener("click", function(e){
+    var a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if(!a) return;
+    var id = a.getAttribute("href").slice(1);
+    if(!id) return;
+    var el = document.getElementById(id);
+    if(!el) return;
+    e.preventDefault();
+    el.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+  });
+
   /* scroll-triggered reveal for content sections */
   if("IntersectionObserver" in window && !reduceMotion){
     var groups = [
@@ -748,19 +762,6 @@
   window.addEventListener("resize", function(){
     target = clamp(target);
     current = clamp(current);
-  });
-
-  document.addEventListener("click", function(e){
-    var a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
-    if(!a) return;
-    var id = a.getAttribute("href").slice(1);
-    if(!id) return;
-    var el = document.getElementById(id);
-    if(!el) return;
-    e.preventDefault();
-    target = clamp(el.getBoundingClientRect().top + window.scrollY);
-    history.pushState(null, "", "#" + id);
-    requestTick();
   });
 })();
 </script>
