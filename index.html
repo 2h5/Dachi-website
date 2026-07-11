@@ -82,22 +82,7 @@
     align-items:center;
     gap:14px;
   }
-  .monogram svg{ width:44px; height:44px; flex:none; }
-  .monogram .word{
-    font-family:var(--sans);
-    font-size:11px;
-    letter-spacing:0.28em;
-    line-height:1.5;
-    color:var(--bone-dim);
-  }
-  .monogram .word b{
-    display:block;
-    font-family:var(--serif);
-    font-weight:600;
-    font-size:15px;
-    letter-spacing:0.14em;
-    color:var(--bone);
-  }
+  .monogram img{ height:48px; width:auto; flex:none; display:block; }
 
   .topbar-contact{
     display:flex;
@@ -523,10 +508,7 @@
   <div class="wrap">
     <div class="topbar">
       <div class="monogram">
-        <svg viewBox="0 0 44 44" fill="none">
-          <text x="22" y="30" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="none" stroke="#E4C078" stroke-width="1.1">AP</text>
-        </svg>
-        <div class="word">ARAGVELI PALAZZOLO<b>LLC</b></div>
+        <img src="logo-mark.png" alt="Aragveli Palazzolo LLC">
       </div>
       <div class="topbar-contact">
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 347-837-9427</span>
@@ -642,10 +624,7 @@
 <footer>
   <div class="wrap foot-wrap">
     <div class="monogram">
-      <svg viewBox="0 0 44 44" fill="none" style="width:34px;height:34px;">
-        <text x="22" y="30" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="none" stroke="#C29455" stroke-width="1">AP</text>
-      </svg>
-      <div class="word" style="color:#8a8578;">ARAGVELI PALAZZOLO<b style="color:#c9c4b6;">LLC</b></div>
+      <img src="logo-mark.png" alt="Aragveli Palazzolo LLC" style="height:38px;opacity:.9;">
     </div>
     <div class="foot-links">
       <a href="tel:3478379427"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>347-837-9427</a>
@@ -693,7 +672,7 @@
 
   document.documentElement.style.scrollBehavior = "auto";
 
-  var ease = 0.1;
+  var ease = 0.065;
   var current = window.scrollY;
   var target = current;
   var ticking = false;
